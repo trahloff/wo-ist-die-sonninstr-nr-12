@@ -1,0 +1,82 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "opsworks:DescribeStacks",
+        "codedeploy:CreateDeployment",
+        "rds:*",
+        "codedeploy:GetApplicationRevision",
+        "codedeploy:GetDeploymentConfig",
+        "cloudformation:CreateChangeSet",
+        "sqs:*",
+        "ecr:*",
+        "autoscaling:*",
+        "cloudformation:DeleteChangeSet",
+        "codebuild:BatchGetBuilds",
+        "iam:PassRole",
+        "codecommit:GetCommit",
+        "cloudformation:UpdateStack",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:SetStackPolicy",
+        "cloudfront:*",
+        "sns:*",
+        "codecommit:UploadArchive",
+        "lambda:ListFunctions",
+        "lambda:InvokeFunction",
+        "s3:*",
+        "codedeploy:RegisterApplicationRevision",
+        "cloudformation:*",
+        "opsworks:DescribeDeployments",
+        "elasticloadbalancing:*",
+        "s3:GetBucketVersioning",
+        "codecommit:CancelUploadArchive",
+        "cloudformation:DescribeStacks",
+        "s3:GetObject",
+        "elasticbeanstalk:*",
+        "codecommit:GetUploadArchiveStatus",
+        "opsworks:UpdateApp",
+        "opsworks:CreateDeployment",
+        "cloudformation:CreateStack",
+        "cloudwatch:*",
+        "cloudformation:DeleteStack",
+        "opsworks:DescribeInstances",
+        "codecommit:GetBranch",
+        "ecs:*",
+        "codedeploy:GetDeployment",
+        "ec2:*",
+        "opsworks:DescribeCommands",
+        "codebuild:StartBuild",
+        "cloudformation:ValidateTemplate",
+        "s3:GetObjectVersion",
+        "opsworks:DescribeApps",
+        "logs:*",
+        "ssm:GetParameters",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:DescribeKey",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "opsworks:UpdateStack"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "kms:Decrypt",
+        "kms:Encrypt",
+        "kms:DescribeKey",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*"
+      ],
+      "Resource": [
+        "${kms_arn}",
+        "arn:aws:s3:::codepipeline*"
+      ]
+    }
+  ]
+}

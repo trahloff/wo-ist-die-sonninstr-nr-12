@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "install node dependencies"
+      - npm install
+  pre_build:
+    commands:
+      - echo "LINT"
+      - npm run lint
+      - echo "UNIT TESTS"
+      - npm run test-ci
+      # - echo "E2E TESTS"
+      # - npm run e2e-ci
+  build:
+    commands:
+      - npm run ng -- build --environment=${build_environment} --prod --base-href /
+  post_build:
+    commands:
+      - echo "Deploy to S3"
+      - aws s3 sync dist s3://${s3_bucket} --delete
+      - echo "Update CloudFront Distribution"
+      - aws cloudfront create-invalidation --distribution-id ${cloudfront} --paths "/*"
