@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: 99%;
+    width: 100%;
+    /* float: left; */
+    display: inline-block;
+    object-fit: contain;
+}

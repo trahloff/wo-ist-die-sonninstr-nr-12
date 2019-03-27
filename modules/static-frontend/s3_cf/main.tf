@@ -73,10 +73,7 @@ resource "aws_cloudfront_distribution" "www_distribution" {
       }
     }
 
-    lambda_function_association {
-      event_type = "viewer-response"
-      lambda_arn = "${var.lambda_cf_headers_qualified_arn}"
-    }
+
   }
 
   // Here we're ensuring we can hit this distribution using the custom domain (e.g. "startgnosis.com")

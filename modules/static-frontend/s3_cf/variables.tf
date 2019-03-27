@@ -18,7 +18,5 @@ variable "cert_arn" {
   description = "Certificate ARN for CloudFront"
 }
 
-variable "lambda_cf_headers_qualified_arn" {
-  
-}
+
 

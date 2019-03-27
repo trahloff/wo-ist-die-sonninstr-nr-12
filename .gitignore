@@ -253,3 +253,5 @@ belfast/
 temp/
 
 old_0_usci/
+
+*.log
