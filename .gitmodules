@@ -1,0 +1,3 @@
+[submodule "modules/certificate"]
+	path = modules/certificate
+	url = https://github.com/trahloff/terraform-aws-acm-request-certificate.git
